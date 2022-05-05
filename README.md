@@ -26,10 +26,10 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     bot.run
 
-0 - sender id
-1 - receiver id
-2 - amount of crypto
-3 - crypto
+0 - sender id,
+1 - receiver id,
+2 - amount of crypto,
+3 - crypto,
 4 - usd value
 
 ## Development
