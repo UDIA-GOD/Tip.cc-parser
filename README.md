@@ -1,9 +1,5 @@
 # Tipccparser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tipccparser`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -14,9 +10,27 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install tipccparser
 
-## Usage
+## Example of usage
 
-TODO: Write usage instructions here
+require 'discordrb'
+require 'tipccparser'
+
+bot = Discordrb::Bot.new token: 'TOKEN'
+
+bot.message(start_with: "<") do |event|
+    if event.author == 617037497574359050 then
+        parsed = event.content.parse()
+        event.respond "<@#{parsed[0]}> sent #{parsed[4]} usd to <@#{parsed[1]}>"
+    end
+end
+
+bot.run
+
+0 - sender id
+1 - receiver id
+2 - amount of crypto
+3- crypto
+4- usd value
 
 ## Development
 
