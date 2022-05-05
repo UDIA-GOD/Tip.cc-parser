@@ -12,19 +12,19 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Example of usage
 
-require 'discordrb'
-require 'tipccparser'
-
-bot = Discordrb::Bot.new token: 'TOKEN'
-
-bot.message(start_with: "<") do |event|
-    if event.author == 617037497574359050 then
-        parsed = event.content.parse()
-        event.respond "<@#{parsed[0]}> sent #{parsed[4]} usd to <@#{parsed[1]}>"
+    require 'discordrb'
+    require 'tipccparser'
+    
+    bot = Discordrb::Bot.new token: 'TOKEN'
+    
+    bot.message(start_with: "<") do |event|
+        if event.author == 617037497574359050 then
+            parsed = event.content.parse()
+            event.respond "<@#{parsed[0]}> sent #{parsed[4]} usd to <@#{parsed[1]}>"
+        end
     end
-end
 
-bot.run
+    bot.run
 
 0 - sender id
 1 - receiver id
