@@ -12,7 +12,7 @@ module Tipccparser
     receiverID1 = namea[3].sub "<@", ""
     receiverID = receiverID1.sub ">", ""
     value = namea[4]
-    currency = namea[5]
+    currency = namea[5].sub "**", ""
     usd1 = namea[7].sub "$", ""
     usd = usd1.sub ").", ""
     all = "#{senderID} #{receiverID} #{value} #{currency} #{usd}"
